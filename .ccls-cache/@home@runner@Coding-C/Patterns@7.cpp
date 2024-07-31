@@ -1,21 +1,21 @@
-
 #include <iostream>
 using namespace std;
-/*Pattern-4
+/*Pattern-6
+1234
+123
+12
 1
-22
-333
-4444
 */
 
 int main() {
   int n;
   cout << "Enter the number of rows" << endl;
   cin >> n;
-  for (int i = 0; i < n; i++) {
+  for (int i = n - 1; i >= 0; i--) {
     for (int j = 0; j <= i; j++) {
-      cout << i + 1 << " ";
+      cout << j + 1 << " ";
     }
+
     cout << endl;
   }
 

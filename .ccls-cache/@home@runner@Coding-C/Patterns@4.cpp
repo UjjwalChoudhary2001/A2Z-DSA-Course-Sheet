@@ -1,7 +1,7 @@
 
 #include <iostream>
 using namespace std;
-/*Pattern-2
+/*Pattern-4
 1
 22
 333
