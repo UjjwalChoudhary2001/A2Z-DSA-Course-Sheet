@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-/*Pattern-13
+/*Pattern-14
 A
 A B
 A B C
