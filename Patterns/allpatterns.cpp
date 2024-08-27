@@ -128,12 +128,30 @@ void pattern(int n){
     }
 }
 void pattern12(int n){
-  
+  for(int i=0;i<n;i++)
+    {
+      //Numbers
+      for(int j=0;j<=i;j++)
+        {
+          cout<<j+1<<"";
+        }
+      //spaces
+      for(int j=0;j<2*n-2-2*i;j++)
+        {
+          cout<<" ";
+        }
+      for(int j=i;j>=0;j--)
+        {
+          cout<<j+1<<"";
+        }
+      
+      cout<<endl;
+    }
 }
 int main() {
   int n;
   cout << "Enter the number of rows" << endl;
   cin >> n;
-  pattern(n);
+  pattern12(n);
   return 0;
 }
