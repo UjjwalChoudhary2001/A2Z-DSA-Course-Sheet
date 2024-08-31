@@ -154,10 +154,23 @@ void pattern15(int n) {
   }
 }
 
+void pattern16(int n)
+{
+  for(int i=0;i<n;i++)
+    {  
+      char ch='A';
+      for(int j=0;j<=i;j++)
+        {
+          cout<<char(ch+i)<<" ";
+        }
+      cout<<endl;
+    }
+}
+
 int main() {
   int n;
   cout << "Enter the number of rows" << endl;
   cin >> n;
-  pattern15(n);
+  pattern16(n);
   return 0;
 }
