@@ -144,33 +144,76 @@ void pattern14(int n) {
     cout << endl;
   }
 }
+void pattern14way2(int n) {
+  for (int i = 0; i < n; i++) {
+
+    for (char ch = 'A'; ch <= 'A' + i; ch++) {
+      cout << ch << " ";
+    }
+    cout << endl;
+  }
+}
 void pattern15(int n) {
-  for (int i = n-1; i >= 0; i--) {
+  for (int i = n - 1; i >= 0; i--) {
     char ch = 'A';
     for (int j = 0; j <= i; j++) {
       cout << char(ch + j) << " ";
     }
-    cout<<endl;
+    cout << endl;
+  }
+}
+void pattern15way2(int n) {
+  for (int i = 0; i < n; i++) {
+    for (char ch = 'A'; ch <= 'A' + (n - i - 1); ch++) {
+      cout << ch << " ";
+    }
+    cout << endl;
+  }
+}
+void pattern16(int n) {
+  for (int i = 0; i < n; i++) {
+    char ch = 'A' + i;
+    for (int j = 0; j <= i; j++) {
+      // cout<<char(ch+i)<<" ";
+      cout << ch << " ";
+    }
+    cout << endl;
   }
 }
 
-void pattern16(int n)
-{
-  for(int i=0;i<n;i++)
-    {  
-      char ch='A';
-      for(int j=0;j<=i;j++)
-        {
-          cout<<char(ch+i)<<" ";
-        }
-      cout<<endl;
+void pattern17(int n) {
+  for (int i = 0; i < n; i++) {
+    char ch = 'A';
+
+    //Space
+    for (int j = 0; j < n - i - 1; j++) {
+      cout << " ";
     }
+
+    //Star
+    for (int j = 0; j < 2 * i + 1; j++) {
+      cout << ch;
+      if (j < (2+i+1)/2) {
+        ch++;
+      }
+      else{
+        ch--;
+      }
+    }
+
+    //Space
+    for (int j = 0; j < n - i - 1; j++) {
+      cout << " ";
+    }
+
+    cout << endl;
+  }
 }
 
 int main() {
   int n;
   cout << "Enter the number of rows" << endl;
   cin >> n;
-  pattern16(n);
+  pattern17(n);
   return 0;
 }
