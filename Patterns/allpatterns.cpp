@@ -180,7 +180,6 @@ void pattern16(int n) {
     cout << endl;
   }
 }
-
 void pattern17(int n) {
   for (int i = 0; i < n; i++) {
     char ch = 'A';
@@ -210,10 +209,24 @@ void pattern17(int n) {
   }
 }
 
+void pattern18(int n)
+{
+  for(int i=0;i<n;i++)
+    {
+      
+      for(char ch='E'-i;ch<='E';i++)
+        {
+          cout<<ch<<" ";    
+        }
+        cout<<endl;
+    }
+}
+
+
 int main() {
   int n;
   cout << "Enter the number of rows" << endl;
   cin >> n;
-  pattern17(n);
+  pattern18(n);
   return 0;
 }
