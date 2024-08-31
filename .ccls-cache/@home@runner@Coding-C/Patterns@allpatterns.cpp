@@ -222,11 +222,60 @@ void pattern18(int n)
     }
 }
 
+void pattern19upper(int n)
+{
+  for(int i=0;i<n;i++)
+    {
+      for(int j=0;j<=n-i-1;j++)
+        {
+           cout<<"*";
+        }
+
+      for(int j=0;j<2*i;j++)
+        {
+          cout<<" ";
+        }
+
+      for(int j=0;j<=n-i-1;j++)
+        {
+           cout<<"*";
+        }
+      cout<<endl;
+    }
+}
+
+void pattern19lower(int n)
+{
+  for(int i=0;i<n;i++)
+    {
+      for(int j=0;j<=i;j++)
+        {
+           cout<<"*";
+        }
+
+      for(int j=0;j<2*n-2*i-2;j++)
+        {
+          cout<<" ";
+        }
+
+      for(int j=0;j<=i;j++)
+        {
+           cout<<"*";
+        }
+      cout<<endl;
+    }
+}
+
+void pattern19(int n)
+{
+  pattern19upper(n);
+  pattern19lower(n);
+}
 
 int main() {
   int n;
   cout << "Enter the number of rows" << endl;
   cin >> n;
-  pattern18(n);
+  pattern19(n);
   return 0;
 }
