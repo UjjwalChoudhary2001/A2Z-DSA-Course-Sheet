@@ -184,23 +184,22 @@ void pattern17(int n) {
   for (int i = 0; i < n; i++) {
     char ch = 'A';
 
-    //Space
+    // Space
     for (int j = 0; j < n - i - 1; j++) {
       cout << " ";
     }
 
-    //Star
+    // Star
     for (int j = 0; j < 2 * i + 1; j++) {
       cout << ch;
-      if (j < (2+i+1)/2) {
+      if (j < (2 + i + 1) / 2) {
         ch++;
-      }
-      else{
+      } else {
         ch--;
       }
     }
 
-    //Space
+    // Space
     for (int j = 0; j < n - i - 1; j++) {
       cout << " ";
     }
@@ -208,74 +207,90 @@ void pattern17(int n) {
     cout << endl;
   }
 }
+void pattern18(int n) {
+  for (int i = 0; i < n; i++) {
 
-void pattern18(int n)
-{
-  for(int i=0;i<n;i++)
-    {
-      
-      for(char ch='E'-i;ch<='E';ch++)
-        {
-          cout<<ch<<" ";    
-        }
-        cout<<endl;
+    for (char ch = 'E' - i; ch <= 'E'; ch++) {
+      cout << ch << " ";
     }
+    cout << endl;
+  }
 }
+void pattern19upper(int n) {
 
-void pattern19upper(int n)
-{
-  for(int i=0;i<n;i++)
-    {
-      for(int j=0;j<=n-i-1;j++)
-        {
-           cout<<"*";
-        }
-
-      for(int j=0;j<2*i;j++)
-        {
-          cout<<" ";
-        }
-
-      for(int j=0;j<=n-i-1;j++)
-        {
-           cout<<"*";
-        }
-      cout<<endl;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j <= n - i - 1; j++) {
+      cout << "*";
     }
-}
 
-void pattern19lower(int n)
-{
-  for(int i=0;i<n;i++)
-    {
-      for(int j=0;j<=i;j++)
-        {
-           cout<<"*";
-        }
-
-      for(int j=0;j<2*n-2*i-2;j++)
-        {
-          cout<<" ";
-        }
-
-      for(int j=0;j<=i;j++)
-        {
-           cout<<"*";
-        }
-      cout<<endl;
+    for (int j = 0; j < 2 * i; j++) {
+      cout << " ";
     }
-}
 
-void pattern19(int n)
-{
+    for (int j = 0; j <= n - i - 1; j++) {
+      cout << "*";
+    }
+    cout << endl;
+  }
+}
+void pattern19lower(int n) {
+
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j <= i; j++) {
+      cout << "*";
+    }
+
+    for (int j = 0; j < 2 * n - 2 * i - 2; j++) {
+      cout << " ";
+    }
+
+    for (int j = 0; j <= i; j++) {
+      cout << "*";
+    }
+    cout << endl;
+  }
+}
+void pattern19(int n) {
   pattern19upper(n);
   pattern19lower(n);
+}
+
+void pattern20(int n){
+  //Outer loop for rows
+  for(int i=0;i<2*n-1;i++)
+    {
+      if(i<n)
+      {
+        int stars = i+1;
+        int spaces ; 2*n-2*i-2;
+
+        for(int j=0;j<stars;j++)
+          {
+            cout<<"*";
+          }
+
+        for(int j=0;j<spaces;j++)
+          {
+            cout<<" ";
+          }
+
+        for(int j=0;j<stars;j++)
+          {
+            cout<<"*";
+          }
+      }
+      else{
+        
+      }
+
+      cout<<endl;
+    }
 }
 
 int main() {
   int n;
   cout << "Enter the number of rows" << endl;
   cin >> n;
-  pattern19(n);
+  pattern20(n);
   return 0;
 }
