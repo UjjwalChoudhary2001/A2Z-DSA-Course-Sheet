@@ -258,11 +258,12 @@ void pattern19(int n) {
 void pattern20(int n){
   //Outer loop for rows
   for(int i=0;i<2*n-1;i++)
-    {
+    { 
+      //Upper Pattern
       if(i<n)
       {
         int stars = i+1;
-        int spaces ; 2*n-2*i-2;
+        int spaces = (2*n-2*i-2) ;
 
         for(int j=0;j<stars;j++)
           {
@@ -279,8 +280,25 @@ void pattern20(int n){
             cout<<"*";
           }
       }
+      //Lower Pattern
       else{
-        
+          int stars = 2*n-i-1;
+          int spaces = (2*i-2*n+2);
+
+        for(int j=0;j<stars;j++)
+          {
+            cout<<"*";
+          }
+
+        for(int j=0;j<spaces;j++)
+          {
+            cout<<" ";
+          }
+
+        for(int j=0;j<stars;j++)
+          {
+            cout<<"*";
+          }
       }
 
       cout<<endl;
