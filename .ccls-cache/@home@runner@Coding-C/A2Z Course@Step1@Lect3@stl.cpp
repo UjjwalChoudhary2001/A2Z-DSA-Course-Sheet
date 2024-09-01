@@ -47,11 +47,55 @@ int main()
     }
   cout<<endl;
 
+  //v={1,2}
+  v.push_back(3);
+  v.push_back(4);
+  v.push_back(5);
+  //v={1,2,3,4,5}
   for(auto it = v.begin();it!=v.end();it++)
     {
       cout<<*(it)<<" ";
     }
-  return 0;
+  
+  cout<<v.back()<<endl;
+
+  //Erase function in vector
+  v.erase(v.begin()+1); // v{1,3,4,5}
+  for(auto it = v.begin();it!=v.end();it++)
+    {
+      cout<<*(it)<<" ";
+    }
+  cout<<endl;
+  //v.erase[start,end)
+  v.erase(v.begin()+1,v.begin()+3); // v{1,5} 
+  for(auto it = v.begin();it!=v.end();it++)
+    {
+      cout<<*(it)<<" ";
+    }
+  cout<<endl;
+  //Insert function in vector
+  v.insert(v.begin()+1,2); // v{1,2,3,4,5}
+  for(auto it = v.begin();it!=v.end();it++)
+    {
+      cout<<*(it)<<" ";
+    }
+  cout<<endl;
+  v.insert(v.begin()+2,3,100); // v={1,2,100,100,100,5}
+  for(auto it = v.begin();it!=v.end();it++)
+    {
+      cout<<*(it)<<" ";
+    }
+  v.pop_back(); // v={1,2,100,1e00,100}
+  v.size(); // 5
+
+  v.clear(); //v={}
+  v.empty(); //tru
+    
+  //Lists
+  cout<<"-----------Vectors---------"<<endl;
+
+
 
   
+  return 0;
 }
