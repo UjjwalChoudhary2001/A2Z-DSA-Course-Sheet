@@ -79,57 +79,73 @@ int main() {
   }
   v.pop_back(); // v={1,2,100,100,100}
   v.size();     // 5
-  cout<<"\n"<<v.front()<<endl;
+  cout << "\n" << v.front() << endl;
 
   v.clear(); // v={}
-  //v.empty(); // tru
-  v.swap(v2); //Swaps the vectors 
+  // v.empty(); // tru
+  v.swap(v2); // Swaps the vectors
   // Lists
-  cout <<"\n"<< "-----------Lists-----------" << endl;
-  list<int>l={1,2};
+  cout << "\n"
+       << "-----------Lists-----------" << endl;
+  list<int> l = {1, 2};
   l.push_back(3);
   l.push_front(0);
-  cout<<l.size()<<endl;
+  cout << l.size() << endl;
 
-  for(list<int>::iterator it=l.begin();it!=l.end();it++)
-    {
-      cout<<*(it)<<" ";
-    }
-   if(!l.empty()){
-     cout<<"\nClearing List\n";
-     l.clear();
-   }
-  cout<<l.size();
-  cout<<endl;
- //Note: Insert function works same as in vector
-  
+  for (list<int>::iterator it = l.begin(); it != l.end(); it++) {
+    cout << *(it) << " ";
+  }
+  if (!l.empty()) {
+    cout << "\nClearing List\n";
+    l.clear();
+  }
+  cout << l.size();
+  cout << endl;
+  // Note: Insert function works same as in vector
+
   cout << "-----------Deque-----------" << endl;
-  //Same functions as list
-  deque<int>d={1,2};
-  d.insert(d.begin(),0);
-  for(auto it:d)
-    {
-      cout<<it<<" ";
-    }
+  // Same functions as list
+  deque<int> d = {1, 2};
+  d.insert(d.begin(), 0);
+  for (auto it : d) {
+    cout << it << " ";
+  }
   d.clear();
-  cout<<"\n"<<d.size();
-  
-  cout<<"\n"<<"-----------Stack-----------"<<endl;
-  stack<int>st1,st2;
+  cout << "\n" << d.size();
+
+  cout << "\n"
+       << "-----------Stack-----------" << endl;
+  stack<int> st1, st2;
   st1.push(1);
   st1.push(2);
   st1.push(3);
-  cout<<st1.top()<<endl;
+  cout << st1.top() << endl;
   st1.pop();
   st2.swap(st1);
-  cout<<st2.size()<<endl;  
-  
+  cout << st2.size() << endl;
+
   st2.push(3);
   st2.push(4);
-  while(!st2.empty())
-    {
-      cout<<st2.top()<<" ";
-      st2.pop();
-    }
+  while (!st2.empty()) {
+    cout << st2.top() << " ";
+    st2.pop();
+  }
+  cout << "\n"
+       << "-----------Queue-----------" << endl;
+
+  queue<int> q1, q2;
+  // q1={1,2,3}
+  q1.push(1);
+  q1.push(2);
+  q1.push(3);
+  cout << "Front: " << q1.front() << endl; // 1
+  cout << "Back: " << q1.back() << endl;   // 3
+  cout << "Size: " << q1.size() << endl;
+  q2.swap(q1);
+
+  while (!q2.empty()) {
+    cout << q2.front() << " ";
+    q2.pop();
+  }
   return 0;
 }
