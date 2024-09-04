@@ -77,8 +77,9 @@ int main() {
   for (auto it = v.begin(); it != v.end(); it++) {
     cout << *(it) << " ";
   }
-  v.pop_back(); // v={1,2,100,1e00,100}
+  v.pop_back(); // v={1,2,100,100,100}
   v.size();     // 5
+  cout<<"\n"<<v.front()<<endl;
 
   v.clear(); // v={}
   //v.empty(); // tru
@@ -114,8 +115,20 @@ int main() {
   cout<<"\n"<<d.size();
   
   cout<<"\n"<<"-----------Stack-----------"<<endl;
-  
-    
-  
+  stack<int>st1,st2;
+  st1.push(1);
+  st1.push(2);
+  st1.push(3);
+  cout<<st1.top()<<endl;
+  st1.pop();
+  st2.swap(st1);
+  cout<<st2.size()<<endl;  
+  st1.push(3);
+  st1.push(4);
+  while(!st1.empty())
+    {
+      cout<<st1.top()<<" ";
+      s1.pop();
+    }
   return 0;
 }
