@@ -123,12 +123,13 @@ int main() {
   st1.pop();
   st2.swap(st1);
   cout<<st2.size()<<endl;  
-  st1.push(3);
-  st1.push(4);
-  while(!st1.empty())
+  
+  st2.push(3);
+  st2.push(4);
+  while(!st2.empty())
     {
-      cout<<st1.top()<<" ";
-      st1.pop();
+      cout<<st2.top()<<" ";
+      st2.pop();
     }
   return 0;
 }
