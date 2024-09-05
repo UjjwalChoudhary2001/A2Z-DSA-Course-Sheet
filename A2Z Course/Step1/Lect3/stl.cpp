@@ -147,5 +147,21 @@ int main() {
     cout << q2.front() << " ";
     q2.pop();
   }
+
+  cout << "\n"
+       << "-----------Priority Queue-----------" << endl;
+
+  priority_queue<int> pq; //Max Heap 
+  pq.push(5);  //{5}
+  pq.push(2);  //{5,2}
+  pq.push(10); //{10,5,2}
+  pq.push(1);  //{10,5,2,1}
+
+  cout << "Top:" << pq.top() << endl; //O(1)
+  pq.pop();
+  cout << pq.size() << endl; //Push and pop are O(logn)
+  
+  
+
   return 0;
 }
