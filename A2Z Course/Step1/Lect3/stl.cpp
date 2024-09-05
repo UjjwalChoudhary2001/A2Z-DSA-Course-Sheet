@@ -151,7 +151,7 @@ int main() {
   cout << "\n"
        << "-----------Priority Queue-----------" << endl;
 
-  priority_queue<int> pq; //Max Heap 
+  priority_queue<int> pq; //Max Heap (Stores max element at top)
   pq.push(5);  //{5}
   pq.push(2);  //{5,2}
   pq.push(10); //{10,5,2}
@@ -160,8 +160,44 @@ int main() {
   cout << "Top:" << pq.top() << endl; //O(1)
   pq.pop();
   cout << pq.size() << endl; //Push and pop are O(logn)
-  
-  
 
+  priority_queue<int,vector<int>,greater<int>>pq2; //Min Heap
+  //It stores minimum element at top and maximum in bottom
+  
+  pq2.push(5);  //{5}
+  pq2.push(2);  //{2,5}
+  pq2.push(10); //{2,5,10}
+  pq2.push(1);  //{1,2,5,10}
+
+  cout << "Top:" << pq2.top() << endl; //O(1)
+  pq2.pop();
+  cout << pq2.size() << endl; //Push and pop are O(logn)
+  cout << "\n"
+     << "-----------Set-----------" << endl;
+  set<int>set;
+  set.insert(1); //O(logn)
+  set.insert(1);
+  set.insert(2);
+  set.insert(5);// {1,2,5}
+  set.insert(6);
+  set.erase(5); //O(logn)
+
+ auto it = set.find(6); //Iterator to the element
+ set.erase(it); //O(1)
+
+  for(auto it:set){
+    cout<<it<<" ";
+  }
+  cout<<endl<<set.size()<<endl;
+
+  set.insert(3);
+  set.insert(4);
+  set.insert(5); //set={1,2,3,4,5}
+  auto it2 = set.find(1);
+  auto it3 = set.find(0); // Gives index end+1 ie 5
+
+  set.erase(it2,it3); // [it1,it2) or [start iterator,end iterator)
+  cout<<set.size()<<endl;
+  
   return 0;
 }
