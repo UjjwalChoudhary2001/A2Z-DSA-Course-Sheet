@@ -151,53 +151,76 @@ int main() {
   cout << "\n"
        << "-----------Priority Queue-----------" << endl;
 
-  priority_queue<int> pq; //Max Heap (Stores max element at top)
-  pq.push(5);  //{5}
-  pq.push(2);  //{5,2}
-  pq.push(10); //{10,5,2}
-  pq.push(1);  //{10,5,2,1}
+  priority_queue<int> pq; // Max Heap (Stores max element at top)
+  pq.push(5);             //{5}
+  pq.push(2);             //{5,2}
+  pq.push(10);            //{10,5,2}
+  pq.push(1);             //{10,5,2,1}
 
-  cout << "Top:" << pq.top() << endl; //O(1)
+  cout << "Top:" << pq.top() << endl; // O(1)
   pq.pop();
-  cout << pq.size() << endl; //Push and pop are O(logn)
+  cout << pq.size() << endl; // Push and pop are O(logn)
 
-  priority_queue<int,vector<int>,greater<int>>pq2; //Min Heap
-  //It stores minimum element at top and maximum in bottom
-  
+  priority_queue<int, vector<int>, greater<int>> pq2; // Min Heap
+  // It stores minimum element at top and maximum in bottom
+
   pq2.push(5);  //{5}
   pq2.push(2);  //{2,5}
   pq2.push(10); //{2,5,10}
   pq2.push(1);  //{1,2,5,10}
 
-  cout << "Top:" << pq2.top() << endl; //O(1)
+  cout << "Top:" << pq2.top() << endl; // O(1)
   pq2.pop();
-  cout << pq2.size() << endl; //Push and pop are O(logn)
+  cout << pq2.size() << endl; // Push and pop are O(logn)
   cout << "\n"
-     << "-----------Set-----------" << endl;
-  set<int>set;
-  set.insert(1); //O(logn)
+       << "-----------Set-----------" << endl;
+  set<int> set;
+  set.insert(1); // O(logn)
   set.insert(1);
   set.insert(2);
-  set.insert(5);// {1,2,5}
+  set.insert(5); // {1,2,5}
   set.insert(6);
-  set.erase(5); //O(logn)
+  set.erase(5); // O(logn)
 
- auto it = set.find(6); //Iterator to the element
- set.erase(it); //O(1)
+  auto it = set.find(6); // Iterator to the element
+  set.erase(it);         // O(1)
 
-  for(auto it:set){
-    cout<<it<<" ";
+  for (auto it : set) {
+    cout << it << " ";
   }
-  cout<<endl<<set.size()<<endl;
+  cout << endl << set.size() << endl;
 
   set.insert(3);
   set.insert(4);
-  set.insert(5); //set={1,2,3,4,5}
+  set.insert(5); // set={1,2,3,4,5}
   auto it2 = set.find(1);
   auto it3 = set.find(0); // Gives index end+1 ie 5
 
-  set.erase(it2,it3); // [it1,it2) or [start iterator,end iterator)
-  cout<<set.size()<<endl;
-  
+  set.erase(it2, it3); // [it1,it2) or [start iterator,end iterator)
+  cout << set.size() << endl;
+
+  cout<<"---------Lower and Upper Bound---------"<<endl;
+
+  /* Lower Bound:Gives index of the first occurence of element if found else the index of first occurence of next greater element.
+
+If same element/next greater element is not found then it returns end iterator.ie- (arr+n or vec.end()) which points outside of array or vector.
+
+Upper Bound: Gives the index of first occurence of the next greater element.
+
+If next greater element is not found then it returns end iterator.ie- (arr+n or vec.end()) which points outside of array or vector.
+
+In case of array we write it as:
+lower_bound(a,a+n,element)-a;
+upper_bound(a,a+n,element)-a;
+  */
+  vector<int> vec{10, 20, 30, 30, 30, 40, 50};
+
+   int x = lower_bound(vec.begin(),vec.end(),40)-vec.begin();
+   int y = upper_bound(vec.begin(),vec.end(),50)-vec.begin(); //7 as next grater element is not present
+   int z = upper_bound(vec.begin(),vec.end(),10)-vec.begin();
+   cout<<x<<endl; //5 ie element 40
+   cout<<y<<endl; //7 ie outside vector
+   cout<<z<<endl; //1 ie element 20
+
   return 0;
 }
