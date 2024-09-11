@@ -199,15 +199,18 @@ int main() {
   set.erase(it2, it3); // [it1,it2) or [start iterator,end iterator)
   cout << set.size() << endl;
 
-  cout<<"---------Lower and Upper Bound---------"<<endl;
+  cout << "---------Lower and Upper Bound---------" << endl;
 
-  /* Lower Bound:Gives index of the first occurence of element if found else the index of first occurence of next greater element.
+  /* Lower Bound:Gives index of the first occurence of element if found else the
+index of first occurence of next greater element.
 
-If same element/next greater element is not found then it returns end iterator.ie- (arr+n or vec.end()) which points outside of array or vector.
+If same element/next greater element is not found then it returns end
+iterator.ie- (arr+n or vec.end()) which points outside of array or vector.
 
 Upper Bound: Gives the index of first occurence of the next greater element.
 
-If next greater element is not found then it returns end iterator.ie- (arr+n or vec.end()) which points outside of array or vector.
+If next greater element is not found then it returns end iterator.ie- (arr+n or
+vec.end()) which points outside of array or vector.
 
 In case of array we write it as:
 lower_bound(a,a+n,element)-a;
@@ -215,12 +218,31 @@ upper_bound(a,a+n,element)-a;
   */
   vector<int> vec{10, 20, 30, 30, 30, 40, 50};
 
-   int x = lower_bound(vec.begin(),vec.end(),40)-vec.begin();
-   int y = upper_bound(vec.begin(),vec.end(),50)-vec.begin(); //7 as next grater element is not present
-   int z = upper_bound(vec.begin(),vec.end(),10)-vec.begin();
-   cout<<x<<endl; //5 ie element 40
-   cout<<y<<endl; //7 ie outside vector
-   cout<<z<<endl; //1 ie element 20
+  int x = lower_bound(vec.begin(), vec.end(), 40) - vec.begin();
+  int y = upper_bound(vec.begin(), vec.end(), 50) -
+          vec.begin(); // 7 as next grater element is not present
+  int z = upper_bound(vec.begin(), vec.end(), 10) - vec.begin();
+  cout << x << endl; // 5 ie element 40
+  cout << y << endl; // 7 ie outside vector
+  cout << z << endl; // 1 ie element 20
 
+  cout << "---------Multiset---------" << endl;
+  /* Stores the numbers in sorted order but allows duplicates.*/
+  multiset<int> ms;
+  ms.insert(1); //{1}
+  ms.insert(2); //{1,1}
+  ms.insert(3); //{1,1,1}
+  cout << ms.count(1) << endl;
+  // ms.erase(1); //Erases all the occurences of 1
+  // cout << ms.size() << endl; // gives 0
+
+  // To delete the particular occurence
+  // ms.erase(ms.find(1)) deletes only first occurence of 1
+  multiset<int>::iterator itt = ms.begin();
+  itt++;
+  ms.erase(itt);
+  for (auto it : ms) {
+    cout << it << " ";
+  }
   return 0;
 }
