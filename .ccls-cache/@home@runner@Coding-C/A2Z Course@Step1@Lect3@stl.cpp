@@ -244,5 +244,7 @@ upper_bound(a,a+n,element)-a;
   for (auto it : ms) {
     cout << it << " ";
   }
+
+  
   return 0;
 }
