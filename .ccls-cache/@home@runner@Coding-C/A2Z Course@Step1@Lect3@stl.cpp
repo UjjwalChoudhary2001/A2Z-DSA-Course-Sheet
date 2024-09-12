@@ -245,6 +245,6 @@ upper_bound(a,a+n,element)-a;
     cout << it << " ";
   }
 
-  
+  cout << "---------Multiset---------" << endl;
   return 0;
 }

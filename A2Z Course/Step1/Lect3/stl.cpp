@@ -245,6 +245,7 @@ upper_bound(a,a+n,element)-a;
     cout << it << " ";
   }
 
-  cout << "---------Unordered Set---------" << endl;
+  cout << endl << "---------Unordered Set---------" << endl;
+
   return 0;
 }
