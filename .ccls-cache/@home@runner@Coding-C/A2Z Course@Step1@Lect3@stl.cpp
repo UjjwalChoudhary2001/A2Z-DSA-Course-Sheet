@@ -329,8 +329,8 @@ upper_bound(a,a+n,element)-a;
     cout << "\ngquiz2.erase(4) : ";
     cout << num << " removed \n";
     cout << "\tKEY\tELEMENT\n";
-    for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr) {
-        cout << '\t' << itr->first << '\t' << itr->second
+    for (auto it:gquiz2) {
+        cout << '\t' << it.first << '\t' << it.second
              << '\n';
     }
 
