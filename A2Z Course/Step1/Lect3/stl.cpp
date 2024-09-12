@@ -246,6 +246,33 @@ upper_bound(a,a+n,element)-a;
   }
 
   cout << endl << "---------Unordered Set---------" << endl;
+  /* -->Lower and UpperBound functions are not present , all operations occur in O(1) time and O(n) in worst case.
+
+  -->It stores the elements in random order.
+    */
+
+  unordered_set<int>us;
+  us.insert(1);
+  us.insert(1);
+  us.insert(2);
+  us.insert(3);
+  us.insert(4);
+  us.insert(6);
+  us.insert(5);
+
+  cout<<endl<<us.size()<<endl;
+
+  auto iter = us.find(9);
+  if(iter == us.end())
+  {
+      cout<<"Element is not present in the unordered set"<<endl;
+  }
+
+
+  for(auto it:us)
+  {
+      cout<<it<<" ";
+  }
 
   return 0;
 }
