@@ -341,5 +341,24 @@ upper_bound(a,a+n,element)-a;
   cout << gquiz1.upper_bound(5)->first << '\t';
   cout << "\tELEMENT = " << gquiz1.upper_bound(5)->second << endl;
 
+   cout << "----------------------Unordered-Map------------------------" << endl;
+
+  /*Unordered Map stores the unique keys in randomized order unlike map */
+    /* Avg complexity of insert , delete and search in O(1) and in worst case its O(n)*/
+    /*Avg complexity of operations is O(logn) in Map , in worst case of Unordered map we must use map*/
+
+    unordered_map<string,int>mp;
+    mp["a"]=1;
+    mp["b"]=2;
+    mp["e"]=10;
+    mp["d"]=46;
+    mp["c"]=7;
+
+    for(auto it:mp)
+    {
+        cout<<it.first<<" "<<it.second<<endl;
+    }
+  
+
   return 0;
 }
