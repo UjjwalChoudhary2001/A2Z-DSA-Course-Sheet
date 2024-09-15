@@ -30,8 +30,8 @@ int main() {
     cout << array[i] << " ";
   }
   cout << endl;
-
-  //Concept of Comparators
+  
+  cout<<"-------Concept of Comparators---------\n";
   pair<int, int> arr[] = {{1, 2}, {4, 2}, {1, 1}};
 
   int n = sizeof(arr) / sizeof(arr[0]);
@@ -42,5 +42,32 @@ int main() {
   for (auto it : arr) {
     cout << it.first << " " << it.second << endl;
   }
+
+cout<<"--------Some important functions---------\n";
+  
+
+  string s = "321";
+  //To get all permutations always sort the string first
+  sort(s.begin(), s.end());
+
+  do{
+    cout<<s<<endl;
+  }while(next_permutation(s.begin(),s.end()));
+
+  int a[]= {5,2,1,4,66};
+  int num = sizeof(a)/sizeof(int); //size of a
+  cout<<*max_element(a,a+num)<<endl; //max element in a
+  cout<<*min_element(a,a+num)<<endl; // min element in a
+
+
+//Built in Popcount returns the no. of set bits in a number's binary form
+
+int value =7; 
+int setbits = __builtin_popcount(value);
+cout<<setbits<<endl;
+
+long long val = 6252672821;
+cout<<__builtin_popcountll(val)<<endl;
+   
   return 0;
 }
