@@ -358,7 +358,95 @@ upper_bound(a,a+n,element)-a;
     {
         cout<<it.first<<" "<<it.second<<endl;
     }
-  
 
+   cout << "----------------------MultiMap------------------------" << endl;
+  /*  Can stores same key multiple times , keys are in sorted order.*/
+  multimap<int, int> g1; // empty multimap container
+
+  // insert elements in random order
+  g1.insert(pair<int, int>(1, 40));
+  g1.insert(pair<int, int>(2, 30));
+  g1.insert(pair<int, int>(3, 60));
+  g1.insert(pair<int, int>(6, 50));
+  g1.insert(pair<int, int>(6, 10));
+
+  g1[6]=22;
+  // printing multimap g1
+  cout << "\nThe multimap g1 is : \n";
+  cout << "KEY ELEMENT\n";
+  for(auto it:g1)
+  {
+      cout<<it.first<<" "<<it.second<<endl;
+  }
+  cout << endl;
+
+  // adding elements randomly,
+  // to check the sorted keys property
+  g1.insert(pair<int, int>(4, 50));
+  g1.insert(pair<int, int>(5, 10));
+
+  // printing multimap g1 again
+
+  cout << "\nThe multimap g1 after adding extra "
+          "elements is : \n";
+  cout << "KEY ELEMENT\n";
+   for(auto it:g1)
+  {
+      cout<<it.first<<" "<<it.second<<endl;
+  }
+  cout << endl;
+
+  // assigning the elements from g1 to g2
+  multimap<int, int> g2(g1.begin(), g1.end());
+
+  // print all elements of the multimap g2
+  cout << "\nThe multimap g2 after assign from "
+          "g1 is : \n";
+  cout << "KEY ELEMENT\n";
+   for(auto it:g2)
+  {
+      cout<<it.first<<" "<<it.second<<endl;
+  }
+  cout << endl;
+
+  // remove all elements up to
+  // key with value 3 in g2
+  cout << "\ng2 after removal of elements less than "
+          "key=3 : \n";
+  cout << "KEY ELEMENT\n";
+  g2.erase(g2.begin(), g2.find(3));
+    for(auto it:g2)
+   {
+      cout<<it.first<<" "<<it.second<<endl;
+   }
+  cout << endl;
+
+  // remove all elements with key = 4
+  int numb;
+  num = g2.erase(4);
+  cout << "\ng2.erase(4) : ";
+  cout << numb << " removed \n";
+  cout << "KEY ELEMENT\n";
+   for(auto it:g2)
+   {
+      cout<<it.first<<" "<<it.second<<endl;
+   }
+
+  cout << endl;
+
+  // lower bound and upper bound for multimap g1 key =
+  // 5
+  cout << "g1.lower_bound(5) : "
+       << "\tKEY = ";
+  cout << g1.lower_bound(5)->first << '\t';
+  cout << "\tELEMENT = " << g1.lower_bound(5)->second
+       << endl;
+  cout << "g1.upper_bound(5) : "
+       << "\tKEY = ";
+  cout << g1.upper_bound(5)->first << '\t';
+  cout << "\tELEMENT = " << g1.upper_bound(5)->second
+       << endl;
+
+  
   return 0;
 }
