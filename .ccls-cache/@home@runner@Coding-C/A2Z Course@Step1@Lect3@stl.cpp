@@ -370,7 +370,6 @@ upper_bound(a,a+n,element)-a;
   g1.insert(pair<int, int>(6, 50));
   g1.insert(pair<int, int>(6, 10));
 
-  g1[6]=22;
   // printing multimap g1
   cout << "\nThe multimap g1 is : \n";
   cout << "KEY ELEMENT\n";
